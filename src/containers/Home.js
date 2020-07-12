@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 
 // Actions
-import { updateProject } from "../store/actions/projects";
+import { addProject } from "../store/actions/projects";
 
 //Components
 import Header from "../components/Header";
@@ -20,6 +20,13 @@ const renderProjects = (projects) => {
   });
 };
 
+const handleAddProject = (props) => {
+  props.addProject({
+    title: "Second project title",
+    description: "Second project description",
+  });
+};
+
 // Component
 const Home = (props) => {
   console.log(props.projects);
@@ -28,16 +35,7 @@ const Home = (props) => {
       <Header />
       <div>
         <h1>Home</h1>
-        <button
-          onClick={() =>
-            props.updateProject({
-              title: "Second project title",
-              description: "Second project description",
-            })
-          }
-        >
-          Add project
-        </button>
+        <button onClick={() => handleAddProject(props)}>Add project</button>
         {renderProjects(props.projects)}
       </div>
     </main>
@@ -55,7 +53,7 @@ const mapStateToProps = (state) => {
 };
 
 const mapDispatchToProps = {
-  updateProject,
+  addProject,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Home);

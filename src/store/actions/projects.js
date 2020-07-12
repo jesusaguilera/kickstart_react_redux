@@ -1,8 +1,8 @@
-const updateProject = (project) => {
+const addProject = (project) => {
   return {
     type: "ADD_PROJECT",
     payload: project,
   };
 };
 
-export { updateProject };
+export { addProject };
