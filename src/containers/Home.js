@@ -1,9 +1,9 @@
 // Dependencies
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
 // Actions
-import { addProject } from "../store/actions/projects";
+import { getProjects, addProject } from "../store/actions/projects";
 
 //Components
 import Header from "../components/Header";
@@ -14,12 +14,18 @@ const Home = (props) => {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
 
+  // useSelector
+  const projects = useSelector((state) => state.projects.projects);
+
   // useDispatch
   const dispatch = useDispatch();
   const addProjectDispatch = (project) => dispatch(addProject(project));
 
-  // useSelector
-  const projects = useSelector((state) => state.projects.projects);
+  // useEffects
+  useEffect(() => {
+    const getProjectsDispatch = () => dispatch(getProjects());
+    getProjectsDispatch();
+  }, []);
 
   // Render projects
   const renderProjects = (projects) => {
@@ -43,20 +49,17 @@ const Home = (props) => {
       return;
     }
 
-    // addProject
-    executeDispatch();
-    cleanForm();
-
-  };
-
-
-  const executeDispatch = () => {
+    // Send new project
     addProjectDispatch({
       title,
       description,
     });
-  }
 
+    // Clean form
+    cleanForm();
+  };
+
+  // Clean form
   const cleanForm = () => {
     setTitle("");
     setDescription("");
