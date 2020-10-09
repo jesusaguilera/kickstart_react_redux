@@ -1,9 +1,8 @@
 // Dependencies
 import React from "react";
-import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 
-const Nav = ({ props }) => {
+const Nav = (props) => {
   return (
     <nav>
       <ul>
@@ -17,7 +16,5 @@ const Nav = ({ props }) => {
     </nav>
   );
 };
-
-Nav.propTypes = {};
 
 export default Nav;

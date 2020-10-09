@@ -1,11 +1,10 @@
 // Dependencies
 import React from "react";
-import PropTypes from "prop-types";
 
 //Components
 import Header from "../components/Header";
 
-const NotFound = ({ props }) => {
+const NotFound = (props) => {
   return (
     <main>
       <Header />
@@ -15,7 +14,5 @@ const NotFound = ({ props }) => {
     </main>
   );
 };
-
-NotFound.propTypes = {};
 
 export default NotFound;

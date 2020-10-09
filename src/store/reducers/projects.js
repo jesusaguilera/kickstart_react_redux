@@ -1,7 +1,5 @@
 const initialState = {
-  projects: [
-    { title: "First project title", description: "First project description" },
-  ],
+  projects: [],
 };
 
 const reducerProjects = (state = initialState, action) => {

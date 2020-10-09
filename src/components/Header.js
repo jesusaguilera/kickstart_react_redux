@@ -1,11 +1,10 @@
 // Dependencies
 import React from "react";
-import PropTypes from "prop-types";
 
 //Components
 import Nav from "./Nav";
 
-const Header = ({ props }) => {
+const Header = (props) => {
   return (
     <header>
       <div>logo</div>
@@ -13,7 +12,5 @@ const Header = ({ props }) => {
     </header>
   );
 };
-
-Header.propTypes = {};
 
 export default Header;
