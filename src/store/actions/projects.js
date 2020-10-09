@@ -1,9 +1,10 @@
 // Get
 const getProjects = () => {
   return (dispatch) => {
-    return fetch("https://api.mocki.io/v1/0350b5d5")
+    return fetch("https://api.mocki.io/v1/13f44462")
       .then((response) => response.json())
       .then((responseJson) => {
+        console.log(responseJson);
         dispatch(getProjectsSuccess(responseJson))
       });
   }

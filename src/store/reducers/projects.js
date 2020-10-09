@@ -7,7 +7,7 @@ const reducerProjects = (state = initialState, action) => {
     case "GET_PROJECTS":
       return {
         ...state,
-        projects: [...state.projects, action.payload],
+        projects: action.payload,
       };
     case "ADD_PROJECT":
       return {

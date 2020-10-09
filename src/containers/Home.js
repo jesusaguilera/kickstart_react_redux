@@ -25,6 +25,7 @@ const Home = (props) => {
   useEffect(() => {
     const getProjectsDispatch = () => dispatch(getProjects());
     getProjectsDispatch();
+    console.log("ho", projects);
   }, []);
 
   // Render projects
